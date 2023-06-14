@@ -23,6 +23,7 @@ public class Main {
                 System.out.println("2. Salir");
                 System.out.print("Ingrese una opción: ");
                 opcion = sc.nextInt();
+                System.out.println("");
                 switch (opcion) {
                     case 1:
                         System.out.print("Ingrese un número: ");
@@ -52,7 +53,7 @@ public class Main {
         }
 
         String[] unidades = {"", "Shuk", "Ishkay", "Kimsa", "Chusku", "Pichka", "Sukta", "Kanchis", "Pusak", "Iskun"};
-        String[] decenas = {"", "Chunka ", "Ishkay Chunka ", "Kimsa Chunka ", "Chusku Chunka ", "Pichka Chunka ", "Sukta Chunka ", "Kanchis Chunka ", "Pusak Chunka", "Iskun Chunka "};
+        String[] decenas = {"", "Chunka ", "Ishkay Chunka ", "Kimsa Chunka ", "Chusku Chunka ", "Pichka Chunka ", "Sukta Chunka ", "Kanchis Chunka ", "Pusak Chunka ", "Iskun Chunka "};
         String[] centenas = {"", "Patsak ", "Ishkay Patsak ", "Kimsa Patsak ", "Chusku Patsak ", "Pichka Patsak ", "Sukta Patsak ", "Kanchis Patsak ", "Pusak Patsak ", "Iskun Patsak "};
         String[] miles = {"", "Waranka ", "Ishkay Waranka ", "Kimsa Waranka ", "Chusku Waranka ", "Pichka Waranka ", "Sukta Waranka ", "Kanchis Waranka ", "Pusak Waranka ", "Iskun Waranka "};
 
