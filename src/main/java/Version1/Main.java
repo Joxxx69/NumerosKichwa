@@ -12,47 +12,44 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String opcion = "0";
-        do {
-            System.out.println("Números en Kichwa");
-            System.out.println("1. Ingresar un número");
-            System.out.println("2. Salir");
-            System.out.print("Ingrese una opción: ");
-            try {
-                opcion = sc.nextLine().trim();
-                Integer.parseInt(opcion);
+
+        try {
+            Scanner sc = new Scanner(System.in);
+            int opcion = 0;
+
+            while (opcion != 2) {
+                System.out.println("Números en Kichwa");
+                System.out.println("1. Ingresar un número");
+                System.out.println("2. Salir");
+                System.out.print("Ingrese una opción: ");
+                opcion = sc.nextInt();
+                System.out.println("");
                 switch (opcion) {
-                    case "1":
+                    case 1:
                         System.out.print("Ingrese un número: ");
-                        String numero = sc.nextLine().trim();
-                        String numeroKichwa = convertirAKichwa(Integer.parseInt(numero));
-                        String mensaje = (numeroKichwa == "Número fuera de rango") ? "\n Número fuera de rango"
-                                : ("\nEl número en kichwa es: " + numeroKichwa);
-                        System.out.println(mensaje);
+                        int numero = sc.nextInt();
+                        String numeroKichwa = convertirAKichwa(numero);
+                        System.out.println("El número en kichwa es: " + numeroKichwa);
                         System.out.println("");
                         break;
-                    case "2":
+                    case 2:
                         System.out.println("Saliendo del programa...");
-                        System.exit(0);
                         break;
                     default:
-                        System.out.println("\n Opción inválida \n ");
+                        System.out.println("Opción inválida");
                         break;
                 }
-            } catch (NumberFormatException e) {
-                System.out.println("\n No es un número válido. \n");
             }
-        } while (opcion != "1" || opcion != "2");
+        } catch (Exception e) {
+            System.out.println("Número no válido");
+
+        }
+
     }
-    
 
     public static String convertirAKichwa(int numero) {
         if (numero < 0 || numero > 9999) {
-            return "Número fuera de rango";
-        }
-        if (numero == 0) {
-            return "Illak";
+            return "Número fuera de rango.";
         }
 
         String[] unidades = {"", "Shuk", "Ishkay", "Kimsa", "Chusku", "Pichka", "Sukta", "Kanchis", "Pusak", "Iskun"};
