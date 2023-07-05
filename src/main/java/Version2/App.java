@@ -1,4 +1,4 @@
-package Calidad;
+package Version2;
 
 import java.util.Scanner;
 
@@ -6,7 +6,7 @@ import java.util.Scanner;
  *
  * @author GAME
  */
-public class Main {
+public class App {
 
     /**
      * @param args the command line arguments
@@ -46,15 +46,17 @@ public class Main {
         } while (opcion != "1" || opcion != "2");
     }
     
-
+    // La funcion que retorna un valor string para la resolucion del problema
     public static String convertirAKichwa(int numero) {
+        // la funcion retornara el mensaje de fuera de rango.
         if (numero < 0 || numero > 9999) {
             return "Número fuera de rango";
         }
+        // la funcion retornara el valor de 0 en kichwa
         if (numero == 0) {
             return "Illak";
         }
-
+        // Matrices para la obtencion de los numeros en kichwa
         String[] unidades = {"", "Shuk", "Ishkay", "Kimsa", "Chusku", "Pichka", "Sukta", "Kanchis", "Pusak", "Iskun"};
         String[] decenas = {"", "Chunka ", "Ishkay Chunka ", "Kimsa Chunka ", "Chusku Chunka ", "Pichka Chunka ", "Sukta Chunka ", "Kanchis Chunka ", "Pusak Chunka ", "Iskun Chunka "};
         String[] centenas = {"", "Patsak ", "Ishkay Patsak ", "Kimsa Patsak ", "Chusku Patsak ", "Pichka Patsak ", "Sukta Patsak ", "Kanchis Patsak ", "Pusak Patsak ", "Iskun Patsak "};
@@ -65,23 +67,20 @@ public class Main {
         // Procesar las unidades
         int unidad = numero % 10;
         resultado = unidades[unidad] + resultado;
-        //System.out.println("unidad: " + unidad);
 
         // Procesar las decenas
         int decena = (numero / 10) % 10;
         resultado = decenas[decena] + resultado;
-        //System.out.println("decena: " + decena);
 
         // Procesar las centenas
         int centena = (numero / 100) % 10;
         resultado = centenas[centena] + resultado;
-        //System.out.println("centena: " + centena);
 
         // Procesar los miles
         int mil = (numero / 1000) % 10;
         resultado = miles[mil] + resultado;
-        //System.out.println("mil: " + mil);
 
+        // la funcion retornara el resultado, quitando el espacio de los extremos de la cadema 
         return resultado.trim();
     }
 }
